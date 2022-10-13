@@ -5,9 +5,10 @@ import axios from "axios";
 type Props = {
   title: string;
   id: string;
+  description: string;
 };
 
-const Products = ({ title, id }: Props) => {
+const Products = ({ title, id, description }: Props) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
@@ -28,12 +29,6 @@ const Products = ({ title, id }: Props) => {
 
   return (
     <div className="container mx-auto px-4">
-      {loading && (
-        <div>
-          {""}
-          <h1>Loading</h1>
-        </div>
-      )}
       {data.map((product) => (
         <div key={product.id}>
           <h6>{product.id}</h6>
